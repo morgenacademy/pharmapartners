@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voorstel · PharmaPartners · Juni 2026 · Morgen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0C0818;
+    --purple: #5B2D8E;
+    --purple-light: #9B6FCF;
+    --accent: #D8FE56;
+    --text: #F0ECF5;
+    --text-sec: #D8CCEC;
+    --text-muted: #7A6B8E;
+    --card-bg: rgba(155,111,207,0.12);
+    --card-border: rgba(180,145,230,0.3);
+    --radius: 16px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 50% at 15% 20%, rgba(91,45,142,0.35) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 60% at 85% 75%, rgba(91,45,142,0.25) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 50% 50%, rgba(155,111,207,0.08) 0%, transparent 80%);
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(12,8,24,0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--card-border);
+    padding: 0 32px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-weight: 900;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+  .nav-logo span { color: var(--accent); }
+
+  .nav-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* LAYOUT */
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  section { padding: 64px 0; }
+  section + section { border-top: 1px solid rgba(180,145,230,0.12); }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--text);
+  }
+
+  h2 {
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  p { color: var(--text-sec); line-height: 1.7; }
+
+  /* HERO */
+  #hero {
+    padding: 96px 0 80px;
+    border-top: none !important;
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(155,111,207,0.2);
+    border: 1px solid var(--card-border);
+    color: var(--purple-light);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-sec);
+    max-width: 580px;
+    margin-top: 20px;
+    line-height: 1.6;
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+  }
+
+  .card p + p { margin-top: 12px; }
+
+  /* TEAM GRID */
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .team-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 24px;
+  }
+
+  .team-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple) 0%, var(--purple-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 14px;
+    flex-shrink: 0;
+  }
+
+  .team-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .team-role {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+  }
+
+  .team-bio {
+    font-size: 0.88rem;
+    color: var(--text-sec);
+    line-height: 1.6;
+  }
+
+  /* DIFF CARDS */
+  .diff-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .diff-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+  }
+
+  .diff-icon {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  .diff-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .diff-desc {
+    font-size: 0.85rem;
+    color: var(--text-sec);
+    line-height: 1.55;
+  }
+
+  /* ===== ADKAR ===== */
+  .adkar-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+  }
+
+  .adkar-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(160px, 1fr));
+    gap: 10px;
+    min-width: 820px;
+  }
+
+  .adkar-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .adkar-header {
+    text-align: center;
+    padding: 10px 6px 8px;
+    border-radius: 10px 10px 0 0;
+    background: rgba(91,45,142,0.35);
+    border: 1px solid rgba(180,145,230,0.4);
+  }
+
+  .adkar-letter {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--accent);
+    display: block;
+    line-height: 1;
+  }
+
+  .adkar-word {
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--purple-light);
+    margin-top: 2px;
+    display: block;
+  }
+
+  /* Koploper rode draad */
+  .koploper-bar {
+    background: rgba(155,111,207,0.15);
+    border: 1px solid rgba(155,111,207,0.4);
+    border-radius: 8px;
+    padding: 7px 10px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--purple-light);
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .atag {
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 0.78rem;
+    line-height: 1.45;
+    font-weight: 500;
+  }
+
+  .atag-m {
+    background: rgba(216,254,86,0.07);
+    border: 1px solid rgba(216,254,86,0.25);
+    color: var(--text-sec);
+  }
+
+  .atag-m .atag-label {
+    color: var(--accent);
+    opacity: 1;
+  }
+
+  .atag-c {
+    background: rgba(155,111,207,0.18);
+    border: 1px solid rgba(155,111,207,0.5);
+    color: var(--text-sec);
+  }
+
+  .atag-c .atag-label {
+    color: var(--purple-light);
+    opacity: 1;
+  }
+
+  .atag-v {
+    background: rgba(240,140,60,0.12);
+    border: 1px solid rgba(240,140,60,0.4);
+    color: #F0A060;
+  }
+
+  .atag-label {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .risk-bar {
+    margin-top: 16px;
+    background: rgba(12,8,24,0.5);
+    border: 1px solid rgba(180,145,230,0.2);
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+
+  .risk-bar-title {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .risk-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+  }
+
+  .risk-item {
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 0.7rem;
+    line-height: 1.4;
+  }
+
+  .risk-item.risk-hoog {
+    background: rgba(200,60,60,0.12);
+    border: 1px solid rgba(200,60,60,0.3);
+    color: #E09090;
+  }
+
+  .risk-item.risk-middel {
+    background: rgba(240,140,60,0.12);
+    border: 1px solid rgba(240,140,60,0.35);
+    color: #F0B070;
+  }
+
+  .risk-item.risk-laag {
+    background: rgba(216,254,86,0.07);
+    border: 1px solid rgba(216,254,86,0.25);
+    color: #B8D860;
+  }
+
+  .risk-level {
+    font-size: 0.58rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .risk-hoog .risk-level { color: #E05050; }
+  .risk-middel .risk-level { color: #F09040; }
+  .risk-laag .risk-level { color: var(--accent); }
+
+  .adkar-legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  /* ===== TIMELINE ===== */
+  .timeline-outer {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+  }
+
+  .timeline-container {
+    min-width: 760px;
+    position: relative;
+  }
+
+  .tl-months {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 0;
+  }
+
+  .tl-month {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--purple-light);
+    padding: 8px 0 10px;
+    border-bottom: 1px solid rgba(155,111,207,0.2);
+  }
+
+  .tl-label-top {
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--purple-light);
+    padding: 10px 0 6px;
+    opacity: 0.8;
+    display: block;
+  }
+
+  .tl-label-bottom {
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 6px 0 10px;
+    opacity: 0.8;
+    display: block;
+  }
+
+  .tl-center-line {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(155,111,207,0.5), rgba(216,254,86,0.3), transparent);
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .tl-lane {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    padding: 12px 0;
+  }
+
+  .tl-lane-top { align-items: flex-end; }
+  .tl-lane-bottom { align-items: flex-start; }
+
+  .tl-col {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0 4px;
+  }
+
+  .tl-pill {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 7px 10px;
+    border-radius: 8px;
+    font-size: 0.73rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    line-height: 1.3;
+    user-select: none;
+    width: 100%;
+  }
+
+  .tl-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  }
+
+  .tl-pill.active {
+    box-shadow: 0 0 0 2px var(--accent);
+  }
+
+  .tl-pill-client {
+    background: rgba(91,45,142,0.35);
+    border: 1px solid rgba(155,111,207,0.5);
+    color: var(--text-sec);
+  }
+
+  .tl-pill-client:hover, .tl-pill-client.active {
+    background: rgba(91,45,142,0.5);
+    border-color: var(--purple-light);
+  }
+
+  .tl-pill-morgen {
+    background: rgba(12,8,24,0.6);
+    border: 1px solid rgba(216,254,86,0.4);
+    color: var(--text-sec);
+  }
+
+  .tl-pill-morgen:hover, .tl-pill-morgen.active {
+    background: rgba(216,254,86,0.08);
+    border-color: var(--accent);
+  }
+
+  .tl-pill-name {
+    font-weight: 700;
+    color: var(--text);
+    font-size: 0.75rem;
+  }
+
+  .tl-pill-meta {
+    font-size: 0.65rem;
+    opacity: 0.7;
+    margin-top: 1px;
+  }
+
+  .tl-detail-panel {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-top: 16px;
+    display: none;
+    position: relative;
+    animation: slideIn 0.2s ease;
+  }
+
+  .tl-detail-panel.visible {
+    display: block;
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .tl-detail-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: rgba(255,255,255,0.08);
+    border: none;
+    border-radius: 6px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-family: 'Barlow', sans-serif;
+    transition: all 0.15s;
+    letter-spacing: 0.04em;
+  }
+
+  .tl-detail-close:hover {
+    background: rgba(255,255,255,0.15);
+    color: var(--text);
+  }
+
+  .tl-detail-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 6px;
+    padding-right: 60px;
+  }
+
+  .tl-detail-type {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .tl-detail-type.client { color: var(--purple-light); }
+  .tl-detail-type.morgen { color: var(--accent); }
+
+  .tl-detail-desc {
+    font-size: 0.88rem;
+    color: var(--text-sec);
+    line-height: 1.6;
+  }
+
+  /* ===== TIMELINE v2 - SPRINT GRID ===== */
+  .tl-v2-outer {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+  }
+
+  .tl-v2-wrap { min-width: 800px; }
+
+  .tl-v2-phases {
+    display: grid;
+    grid-template-columns: 0.85fr repeat(3, 1fr);
+    gap: 3px;
+    margin-bottom: 2px;
+  }
+
+  .tl-v2-phase {
+    padding: 5px 8px;
+    text-align: center;
+    font-size: 0.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 6px 6px 0 0;
+  }
+
+  .tl-v2-phase.prep {
+    color: var(--text-muted);
+    border: 1px solid rgba(180,145,230,0.15);
+    border-bottom: none;
+  }
+
+  .tl-v2-phase.q3 {
+    grid-column: 2 / 5;
+    color: var(--purple-light);
+    background: rgba(91,45,142,0.12);
+    border: 1px solid rgba(155,111,207,0.35);
+    border-bottom: none;
+  }
+
+  .tl-v2-sprints {
+    display: grid;
+    grid-template-columns: 0.85fr repeat(3, 1fr);
+    gap: 3px;
+    margin-bottom: 12px;
+  }
+
+  .tl-v2-sprint {
+    text-align: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 4px 4px 10px;
+    border-bottom: 1px solid;
+    line-height: 1.4;
+  }
+
+  .tl-v2-sprint.prep { color: var(--text-muted); border-color: rgba(180,145,230,0.15); }
+  .tl-v2-sprint.q3 { color: rgba(155,111,207,0.85); border-color: rgba(155,111,207,0.35); }
+
+  .tl-v2-swim-label {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 10px 0 5px;
+  }
+
+  .tl-v2-swim-label.client { color: var(--purple-light); }
+  .tl-v2-swim-label.morgen { color: var(--accent); }
+
+  .tl-v2-row {
+    display: grid;
+    grid-template-columns: 0.85fr repeat(3, 1fr);
+    gap: 3px;
+    padding: 2px 0;
+    align-items: stretch;
+    min-height: 40px;
+  }
+
+  .tl-v2-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(155,111,207,0.5), rgba(216,254,86,0.3), transparent);
+    margin: 8px 0;
+  }
+
+  .tl-v2-pill {
+    border-radius: 6px;
+    padding: 7px 9px;
+    font-size: 0.71rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    line-height: 1.3;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .tl-v2-pill:hover { transform: translateY(-1px); box-shadow: 0 3px 12px rgba(0,0,0,0.3); }
+  .tl-v2-pill.active { box-shadow: 0 0 0 2px var(--accent); }
+
+  .tl-v2-pill.client {
+    background: rgba(91,45,142,0.3);
+    border: 1px solid rgba(155,111,207,0.45);
+    color: var(--text-sec);
+  }
+
+  .tl-v2-pill.client:hover, .tl-v2-pill.client.active {
+    background: rgba(91,45,142,0.45);
+    border-color: var(--purple-light);
+  }
+
+  .tl-v2-pill.morgen {
+    background: rgba(216,254,86,0.07);
+    border: 1px solid rgba(216,254,86,0.28);
+    color: var(--text-sec);
+  }
+
+  .tl-v2-pill.morgen:hover, .tl-v2-pill.morgen.active {
+    background: rgba(216,254,86,0.13);
+    border-color: var(--accent);
+  }
+
+  .tl-v2-pill-name {
+    font-weight: 700;
+    color: var(--text);
+    font-size: 0.72rem;
+    line-height: 1.25;
+  }
+
+  .tl-v2-pill-meta {
+    font-size: 0.59rem;
+    opacity: 0.65;
+    margin-top: 2px;
+  }
+
+  /* ===== BEGROTING ===== */
+  .beg-section {
+    margin-bottom: 20px;
+  }
+
+  .beg-section-title {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(216,254,86,0.15);
+  }
+
+  .beg-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .beg-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr auto;
+    gap: 12px;
+    padding: 13px 18px;
+    align-items: start;
+    border-bottom: 1px solid rgba(180,145,230,0.1);
+  }
+
+  .beg-row:last-child { border-bottom: none; }
+
+  .beg-row-name {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  .beg-row-desc {
+    font-size: 0.8rem;
+    color: var(--text-sec);
+    line-height: 1.45;
+  }
+
+  .beg-row-price {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--purple-light);
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  .beg-total-card {
+    background: rgba(91,45,142,0.22);
+    border: 1px solid rgba(155,111,207,0.5);
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin-top: 8px;
+  }
+
+  .beg-total-title {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--purple-light);
+    margin-bottom: 14px;
+  }
+
+  .beg-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(180,145,230,0.12);
+    font-size: 0.9rem;
+    color: var(--text-sec);
+  }
+
+  .beg-total-row:last-of-type { border-bottom: none; }
+
+  .beg-total-row.grand {
+    padding-top: 14px;
+    margin-top: 6px;
+    border-top: 1px solid rgba(180,145,230,0.3);
+    border-bottom: none;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--text);
+  }
+
+  .beg-total-row.grand .beg-total-price {
+    color: var(--accent);
+    font-size: 1.2rem;
+  }
+
+  .beg-total-price { font-weight: 700; color: var(--purple-light); }
+
+  .beg-note {
+    margin-top: 14px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  /* ===== BEGRIPPEN ===== */
+  .begrippen-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .begrip-card {
+    background: rgba(12,8,24,0.6);
+    border: 1px solid rgba(180,145,230,0.18);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+
+  .begrip-term {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 5px;
+  }
+
+  .begrip-def {
+    font-size: 0.82rem;
+    color: var(--text-sec);
+    line-height: 1.5;
+  }
+
+  /* ===== BEGROTING COMPARE ===== */
+  .beg-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 4px;
+  }
+
+  .beg-col {
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .beg-col.col-client {
+    background: rgba(91,45,142,0.14);
+    border: 1px solid rgba(155,111,207,0.35);
+  }
+
+  .beg-col.col-full {
+    background: rgba(216,254,86,0.05);
+    border: 1px solid rgba(216,254,86,0.28);
+  }
+
+  .beg-col-title {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+
+  .col-client .beg-col-title { color: var(--purple-light); }
+  .col-full .beg-col-title { color: var(--accent); }
+
+  .beg-col-sub {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    line-height: 1.4;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(180,145,230,0.12);
+  }
+
+  .beg-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    padding: 5px 0;
+    font-size: 0.82rem;
+    border-bottom: 1px solid rgba(180,145,230,0.08);
+  }
+
+  .beg-line:last-of-type { border-bottom: none; }
+
+  .beg-line-name { color: var(--text-sec); flex: 1; line-height: 1.4; }
+  .beg-line-price { font-weight: 700; white-space: nowrap; color: var(--text-muted); font-size: 0.8rem; }
+
+  .beg-line.highlight .beg-line-name { color: var(--text); }
+  .beg-line.highlight .beg-line-price { color: var(--accent); }
+
+  .beg-sep {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 10px 0 4px;
+    opacity: 0.8;
+  }
+
+  .beg-col-total {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid rgba(180,145,230,0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-weight: 800;
+  }
+
+  .col-client .beg-col-total { color: var(--purple-light); }
+  .col-full .beg-col-total { color: var(--accent); }
+
+  .beg-col-total-label { font-size: 0.8rem; }
+  .beg-col-total-amount { font-size: 1.2rem; }
+
+  @media (max-width: 600px) {
+    .beg-compare { grid-template-columns: 1fr; }
+    .begrippen-grid { grid-template-columns: 1fr; }
+  }
+
+  /* QUESTIONS */
+  .questions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .question-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 18px 22px;
+  }
+
+  .question-num {
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: var(--accent);
+    flex-shrink: 0;
+    line-height: 1;
+    width: 28px;
+    text-align: right;
+  }
+
+  .question-text {
+    font-size: 0.92rem;
+    color: var(--text-sec);
+    line-height: 1.55;
+  }
+
+  /* FOOTER */
+  footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid rgba(180,145,230,0.15);
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-size: 1.4rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .footer-logo span { color: var(--accent); }
+
+  .footer-url {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    nav { padding: 0 16px; }
+    .container { padding: 0 16px; }
+    section { padding: 48px 0; }
+    .team-grid { grid-template-columns: 1fr; }
+    .diff-grid { grid-template-columns: 1fr; }
+    .beg-row { grid-template-columns: 1fr; gap: 4px; }
+    .beg-row-price { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">MORGEN<span>.</span></div>
+  <div class="nav-label">Voorstel &middot; PharmaPartners &middot; Juni 2026</div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="badge">Voorstel</div>
+    <h1>Begeleiding naar<br>Agentic Teams</h1>
+    <p class="hero-subtitle">Een veranderkundig en praktisch traject om PharmaPartners te begeleiden bij de verschuiving naar agentic werken — van bewustzijn tot geborgde werkwijze.</p>
+  </div>
+</section>
+
+<!-- 02 DE KLANTVRAAG -->
+<section id="klantvraag">
+  <div class="container">
+    <span class="eyebrow">02 &mdash; De klantvraag</span>
+    <h2>Wat PharmaPartners vraagt</h2>
+    <div class="card">
+      <p>PharmaPartners wil zes nieuwe teams begeleiden bij de overstap naar agentic werken. Niet met een klassiek opleidingsprogramma, maar met begeleiding die aansluit op de dagelijkse praktijk: aanwezig bij stand-ups en retro's, spreekuur voor vragen, en trainingen op basis van wat teams daadwerkelijk nodig hebben.</p>
+      <p>De ambitie is dat teams aan het einde van het jaar zelfstandig agentic werken &mdash; en dat de kennis niet verdwijnt als de begeleiding stopt. Daarvoor zijn de twee koplopers (de teams die het al doen) een cruciale asset: zij zijn het bewijs dat het werkt, en zij kunnen de brug zijn naar de rest.</p>
+      <p>De vraag aan ons: begeleid ons bij deze uitbreiding. Veranderkundig &eacute;n praktisch. Met aandacht voor mensen, niet alleen voor tools.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 WAAROM MORGEN -->
+<section id="waarom-morgen">
+  <div class="container">
+    <span class="eyebrow">03 &mdash; Waarom Morgen</span>
+    <h2>Het team</h2>
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-avatar">S</div>
+        <div class="team-name">Simon</div>
+        <div class="team-role">AI &amp; Agentic Specialist</div>
+        <p class="team-bio">Simon begeleidt teams bij het werken met AI-agents en agentic systemen. Hij combineert diepgaande technische kennis met de praktijkervaring om dat over te dragen op mensen die het nog leren.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar">K</div>
+        <div class="team-name">Karin</div>
+        <div class="team-role">Veranderkundige &amp; Projectmanager</div>
+        <p class="team-bio">Karin is veranderkundige met ruime ervaring in het implementeren van nieuwe manieren van werken, zowel nationaal als internationaal. Zij werkte aan Simplify at Scale-trajecten, onder andere bij de Rabobank, en weet hoe je mensen en organisaties meekrijgt in een ingrijpende verschuiving. Zij draagt ook het overall projectmanagement van dit traject.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar">H</div>
+        <div class="team-name">Harmen</div>
+        <div class="team-role">Trainer &amp; AI Specialist</div>
+        <p class="team-bio">Harmen is ervaringsdeskundige op het snijvlak van technologie en verandering. Als trainer en AI-specialist helpt hij teams niet alleen begrijpen wat AI kan, maar ook hoe ze het direct inzetten in hun dagelijkse werk. Beschikbaar voor circa &eacute;&eacute;n dag per week.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar">M</div>
+        <div class="team-name">Michiel</div>
+        <div class="team-role">Accountmanager</div>
+        <p class="team-bio">Michiel is het vaste aanspreekpunt voor PharmaPartners. Hij houdt de lijn warm, zorgt dat het programma goed is georganiseerd en bewaakt dat de verwachtingen aan beide kanten helder blijven.</p>
+      </div>
+
+    </div>
+
+    <h2 style="margin-top:48px;">Wat ons onderscheidt</h2>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-icon">&#8635;</div>
+        <div class="diff-title">Wij werken in bestaande rituelen</div>
+        <p class="diff-desc">Geen extra meetings bovenop een volle agenda. We schuiven aan bij stand-ups, retro's en reviews &mdash; minimale verstoring, maximale impact.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">&#11088;</div>
+        <div class="diff-title">Verandering, niet alleen training</div>
+        <p class="diff-desc">We trainen vaardigheden &eacute;n begeleiden de gedragsverandering. Kennis zonder opvolging verdampt. Wij zorgen dat het beklijft.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">&#127942;</div>
+        <div class="diff-title">Koplopers als hefboom</div>
+        <p class="diff-desc">De twee teams die het al doen zijn uw krachtigste troef. Wij activeren ze als bewijs, kennisbron en intern referentiepunt.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">&#127807;</div>
+        <div class="diff-title">Borging van dag &eacute;&eacute;n</div>
+        <p class="diff-desc">Champions, een community of practice en kennisbeheer zorgen dat de organisatie leert leren &mdash; ook als wij vertrekken.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 ADKAR SPEELVELD -->
+<section id="adkar">
+  <div class="container">
+    <span class="eyebrow">04 &mdash; ADKAR Speelveld</span>
+    <h2>Rollen bij PharmaPartners</h2>
+    <p style="font-size:0.88rem;color:var(--text-sec);margin-bottom:20px;">Vier rollen aan de kant van PharmaPartners. Elk heeft een andere betrokkenheid — en een andere tijdsinvestering. Goed om vooraf helder te hebben.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px;">
+
+      <!-- Management -->
+      <div style="background:rgba(91,45,142,0.12);border:1px solid rgba(155,111,207,0.3);border-radius:14px;padding:20px;">
+        <div style="font-size:0.62rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple-light);margin-bottom:8px;">Management</div>
+        <div style="font-size:1.1rem;font-weight:800;color:var(--text-main);margin-bottom:4px;">~2 dagen</div>
+        <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:12px;">over het hele traject, incl. voorbereiding</div>
+        <p style="font-size:0.82rem;color:var(--text-sec);line-height:1.7;margin:0;">Spreken de richting publiek uit bij de kickoff. Nemen deel aan de alignment ochtend en de eindmeting. Zichtbare steun is de belangrijkste succesfactor &mdash; de tijdsinvestering is beperkt.</p>
+      </div>
+
+      <!-- Koplopers -->
+      <div style="background:rgba(91,45,142,0.12);border:1px solid rgba(155,111,207,0.3);border-radius:14px;padding:20px;">
+        <div style="font-size:0.62rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple-light);margin-bottom:8px;">Koplopers &mdash; 2 teams</div>
+        <div style="font-size:1.1rem;font-weight:800;color:var(--text-main);margin-bottom:4px;">minimale extra druk</div>
+        <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:12px;">zij werken gewoon door in hun eigen sprint</div>
+        <p style="font-size:0.82rem;color:var(--text-sec);line-height:1.7;margin:0;">De twee teams die al agentic werken. Zij worden soms gevraagd hun werkwijze te laten zien &mdash; bij de kickoff, de gilde sessies en de CoP. Niets nieuws leren, niets extra organiseren. Wel erkenning en een groter podium.</p>
+      </div>
+
+      <!-- 6 nieuwe teams -->
+      <div style="background:rgba(91,45,142,0.12);border:1px solid rgba(155,111,207,0.3);border-radius:14px;padding:20px;">
+        <div style="font-size:0.62rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple-light);margin-bottom:8px;">6 nieuwe teams</div>
+        <div style="font-size:1.1rem;font-weight:800;color:var(--text-main);margin-bottom:4px;">~2 uur extra/sprint</div>
+        <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:12px;">sprint coaching zit al in bestaande rituelen</div>
+        <p style="font-size:0.82rem;color:var(--text-sec);line-height:1.7;margin:0;">De coaching en het spreekuur sluiten aan op agile rituelen zoals stand-ups, retro's en reviews. De enige echte extra investering per sprint is de training van ~2 uur. Maandelijks komt daar de CoP bij.</p>
+      </div>
+
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px;">
+
+      <!-- Champions -->
+      <div style="background:rgba(91,45,142,0.12);border:1px solid rgba(155,111,207,0.3);border-radius:14px;padding:20px;">
+        <div style="font-size:0.62rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple-light);margin-bottom:8px;">Champions &mdash; 1 per team (6 personen)</div>
+        <div style="font-size:1.1rem;font-weight:800;color:var(--text-main);margin-bottom:4px;">iets meer dan hun team</div>
+        <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:12px;">brug tussen Morgen, koplopers en hun team</div>
+        <p style="font-size:0.82rem;color:var(--text-sec);line-height:1.7;margin:0;">Uit elk nieuw team is er één persoon die intern voorop loopt. De champion krijgt een expliciete rol: vragen ophalen, verbinding leggen met de koplopers en Morgen, en het leren doorgeven aan het team. Zij nemen deel aan de champions kickoff, de gilde sessies en de CoP.</p>
+      </div>
+
+      <!-- CoP -->
+      <div style="background:rgba(216,254,86,0.07);border:1px solid rgba(216,254,86,0.25);border-radius:14px;padding:20px;">
+        <div style="font-size:0.62rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Community of Practice (CoP)</div>
+        <div style="font-size:1.1rem;font-weight:800;color:var(--text-main);margin-bottom:4px;">maandelijks &middot; ~2 uur</div>
+        <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:12px;">start tijdens het traject, loopt door als wij weg zijn</div>
+        <p style="font-size:0.82rem;color:var(--text-sec);line-height:1.7;margin:0;">Maandelijkse bijeenkomst voor alle developers uit agentic teams &mdash; koplopers én de 6 nieuwe teams. Ervaringen delen, vragen stellen, van elkaar leren. Wij starten de CoP op en dragen de facilitation gedurende het traject over aan de organisatie zelf. Zo blijft de kennisdeling leven als wij vertrekken.</p>
+      </div>
+
+    </div>
+
+    <h2 style="margin-top:8px;">Twee vertrekpunten, één aanpak</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;margin-top:16px;">
+      <div style="background:rgba(155,111,207,0.15);border:1px solid rgba(155,111,207,0.4);border-radius:12px;padding:16px 20px;">
+        <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple-light);margin-bottom:6px;">Vertrekpunt 1 &mdash; De basis die blijkt uit gesprekken</div>
+        <p style="font-size:0.88rem;color:var(--text-sec);line-height:1.6;">PharmaPartners wil 6 nieuwe teams begeleiden bij agentic werken: sprint coaching, spreekuur, trainingen op maat. Concreet, praktisch, aansluitend op de dagelijkse sprint.</p>
+      </div>
+      <div style="background:rgba(216,254,86,0.07);border:1px solid rgba(216,254,86,0.25);border-radius:12px;padding:16px 20px;">
+        <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;">Vertrekpunt 2 &mdash; Wat wij denken dat nodig is</div>
+        <p style="font-size:0.88rem;color:var(--text-sec);line-height:1.6;">Alleen training is niet genoeg. Verandering beklijft alleen als management alignment, psychologische veiligheid en borging bewust worden ingericht. Dat is onze toegevoegde laag.</p>
+      </div>
+    </div>
+    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:20px;">Het onderstaande ADKAR-speelveld toont beide lagen per fase. <span style="color:var(--purple-light);font-weight:700;">Paars</span> = de basis die blijkt uit gesprekken. <span style="color:var(--accent);font-weight:700;">Geel-groen</span> = wat wij toevoegen.</p>
+    <div class="adkar-wrapper">
+
+      <!-- Koploper bar -->
+      <div class="koploper-bar" style="margin-bottom:10px; min-width:820px;">
+        Rode draad: 2 koplopers als actief referentiepunt in alle fasen &mdash; bewijs dat het werkt, peer-to-peer geloofwaardigheid
+      </div>
+
+      <div class="adkar-grid">
+
+        <!-- AWARENESS -->
+        <div class="adkar-col">
+          <div class="adkar-header">
+            <span class="adkar-letter">A</span>
+            <span class="adkar-word">Awareness</span>
+          </div>
+          <div class="atag atag-m">
+            <span class="atag-label">Morgen</span>
+            Kickoff lunchsessie: leiders spreken de richting uit, koplopers laten live zien hoe zij werken, nieuwe teams ervaren het rechtstreeks. Bewustzijn begint met geloofwaardigheid van binnenuit.
+          </div>
+        </div>
+
+        <!-- DESIRE -->
+        <div class="adkar-col">
+          <div class="adkar-header">
+            <span class="adkar-letter">D</span>
+            <span class="adkar-word">Desire</span>
+          </div>
+          <div class="atag atag-m">
+            <span class="atag-label">Morgen</span>
+            Intake &amp; nulmeting: we voeren met elk team een gesprek over wat agentic werken voor hen betekent &mdash; zodat we weten wat er leeft v&oacute;&oacute;rdat de begeleiding begint.
+          </div>
+          <div class="atag atag-m">
+            <span class="atag-label">Morgen</span>
+            Management alignment ochtend: we maken expliciet wat experimenteren betekent en zorgen dat psychologische veiligheid zichtbaar wordt nageleefd.
+          </div>
+          <div class="atag atag-m">
+            <span class="atag-label">Morgen</span>
+            Champions kickoff: uit elk team identificeren en activeren we één persoon als interne brug tussen de koplopers, Morgen en het team.
+          </div>
+        </div>
+
+        <!-- KNOWLEDGE -->
+        <div class="adkar-col">
+          <div class="adkar-header">
+            <span class="adkar-letter">K</span>
+            <span class="adkar-word">Knowledge</span>
+          </div>
+          <div class="atag atag-c">
+            <span class="atag-label">Basis uit gesprekken</span>
+            Spreekuur (online): een wekelijks vast moment voor vragen uit de sprint, ingebed in het agile ritme.
+          </div>
+          <div class="atag atag-c">
+            <span class="atag-label">Basis uit gesprekken</span>
+            Trainingen: &eacute;&eacute;n training per sprint, ~2 uur, inhoud op basis van de intake. Clusters: Governance, Werkwijze, Procesflow.
+          </div>
+          <div class="atag atag-m">
+            <span class="atag-label">Morgen</span>
+            Gilde sessies: koplopers delen iedere sprint hun werkwijze met de champions van de nieuwe teams. Peer-to-peer kennisoverdracht.
+          </div>
+        </div>
+
+        <!-- ABILITY -->
+        <div class="adkar-col">
+          <div class="adkar-header">
+            <span class="adkar-letter">A</span>
+            <span class="adkar-word">Ability</span>
+          </div>
+          <div class="atag atag-c">
+            <span class="atag-label">Basis uit gesprekken</span>
+            Sprint begeleiding: we schuiven aan bij agile rituelen zoals stand-ups, retro's en reviews &mdash; we observeren, stellen vragen en spreken na met de scrummaster.
+          </div>
+          <div class="atag atag-c">
+            <span class="atag-label">Basis uit gesprekken</span>
+            Coaching in de sprint: eens per sprint zitten we naast een developer of tester op het moment dat het telt.
+          </div>
+        </div>
+
+        <!-- REINFORCEMENT -->
+        <div class="adkar-col">
+          <div class="adkar-header">
+            <span class="adkar-letter">R</span>
+            <span class="adkar-word">Reinforcement</span>
+          </div>
+          <div class="atag atag-m">
+            <span class="atag-label">Morgen</span>
+            Community of Practice: maandelijks komen alle developers uit agentic teams samen. Wij starten de CoP op en dragen de facilitation gedurende het traject over &mdash; zodat die blijft draaien als wij vertrekken.
+          </div>
+          <div class="atag atag-m">
+            <span class="atag-label">Morgen</span>
+            Eindmeting &amp; doorgroeiplan: aan het einde van Q3 meten we waar elk team staat en welke teams klaar zijn voor de volgende golf.
+          </div>
+        </div>
+
+      </div><!-- /adkar-grid -->
+
+      <!-- RISK BAR -->
+      <div class="risk-bar" style="min-width:820px;">
+        <div class="risk-bar-title">Risico's die wij bewust adresseren</div>
+        <div class="risk-grid">
+          <div class="risk-item risk-hoog">
+            <span class="risk-level">Hoog</span>
+            Als management niets zegt, horen medewerkers geen richting en wachten ze af.
+          </div>
+          <div class="risk-item risk-hoog">
+            <span class="risk-level">Hoog</span>
+            Verkeerde teams gekozen: weerstand vergroot de bottleneck in plaats van die op te lossen.
+          </div>
+          <div class="risk-item risk-middel">
+            <span class="risk-level">Middel</span>
+            Training zonder opvolging: kennis verdampt als er niet direct mee wordt geoefend.
+          </div>
+          <div class="risk-item risk-laag">
+            <span class="risk-level">Beheersbaar</span>
+            Capaciteit is strak &mdash; werkt alleen als we in bestaande rituelen zitten.
+          </div>
+          <div class="risk-item risk-hoog">
+            <span class="risk-level">Hoog</span>
+            Geen borging: zodra de begeleiding stopt, valt het stil en zakken teams terug.
+          </div>
+        </div>
+      </div>
+
+      <!-- LEGEND -->
+      <div class="adkar-legend" style="min-width:820px;">
+        <div class="legend-item">
+          <div class="legend-dot" style="background:rgba(155,111,207,0.4);border:1px solid rgba(155,111,207,0.7);"></div>
+          De basis die blijkt uit gesprekken
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:rgba(216,254,86,0.2);border:1px solid rgba(216,254,86,0.4);"></div>
+          Wat wij toevoegen
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:rgba(155,111,207,0.25);border:1px solid rgba(155,111,207,0.5);"></div>
+          Koploper rode draad
+        </div>
+      </div>
+
+    </div><!-- /adkar-wrapper -->
+  </div>
+</section>
+
+<!-- 05 TRAJECT & PLANNING -->
+<section id="planning">
+  <div class="container">
+    <span class="eyebrow">05 &mdash; Traject &amp; Planning</span>
+    <h2>Traject per sprint</h2>
+    <p style="margin-bottom:20px; font-size:0.88rem; color:var(--text-sec);">Voorbereiding start in september, v&oacute;&oacute;r aanvang Q3. Alle 6 teams starten gelijktijdig in sprint 1 (oktober). Klik op een blok voor details. <span style="color:var(--purple-light);font-weight:700;">Paars</span> = de basis die blijkt uit gesprekken &middot; <span style="color:var(--accent);font-weight:700;">Geel-groen</span> = wat wij toevoegen.</p>
+
+    <div class="tl-v2-outer">
+      <div class="tl-v2-wrap">
+
+        <!-- Phase headers -->
+        <div class="tl-v2-phases">
+          <div class="tl-v2-phase prep">Voorbereiding</div>
+          <div class="tl-v2-phase q3">Q3 &mdash; Oktober &middot; November &middot; December</div>
+        </div>
+
+        <!-- Period labels -->
+        <div class="tl-v2-sprints">
+          <div class="tl-v2-sprint prep">September</div>
+          <div class="tl-v2-sprint q3">Oktober<br><span style="font-weight:400;opacity:0.7">Sprint 1 &amp; 2</span></div>
+          <div class="tl-v2-sprint q3">November<br><span style="font-weight:400;opacity:0.7">Sprint 3 &amp; 4</span></div>
+          <div class="tl-v2-sprint q3">December<br><span style="font-weight:400;opacity:0.7">Sprint 5 &amp; 6</span></div>
+        </div>
+
+        <!-- CLIENT SWIM LANE -->
+        <div class="tl-v2-swim-label client">&#8593; De basis die blijkt uit gesprekken</div>
+
+        <!-- Row: Spreekuur spanning (klant vraagt — sept col empty) -->
+        <div class="tl-v2-row">
+          <div class="tl-v2-pill client" style="grid-column:2/5"
+            onclick="showDetail(this)"
+            data-title="Spreekuur (wekelijks, doorlopend)"
+            data-type="client"
+            data-desc="Wekelijks vast moment voor vragen uit de sprint. Doorlopend heel Q3 &mdash; okt t/m dec. Streven: inbedden in bestaande agile rituelen zodat het geen extra afspraak wordt. ~12 sessies totaal.">
+            <span class="tl-v2-pill-name">Spreekuur &middot; wekelijks</span>
+            <span class="tl-v2-pill-meta">okt &rarr; dec &middot; doorlopend</span>
+          </div>
+        </div>
+
+        <!-- Row: Sprint begeleiding alle 6 teams (spanning) -->
+        <div class="tl-v2-row">
+          <div class="tl-v2-pill client" style="grid-column:2/5"
+            onclick="showDetail(this)"
+            data-title="Sprint begeleiding alle 6 teams"
+            data-type="client"
+            data-desc="Retro bijwonen + coaching moment per sprint per team. Alle 6 teams starten gelijktijdig in oktober (sprint 1). Doorlopend t/m december (sprint 6). Na elke retro: korte debrief met de scrummaster.">
+            <span class="tl-v2-pill-name">Sprint begeleiding &middot; 6 teams</span>
+            <span class="tl-v2-pill-meta">okt &rarr; dec &middot; alle teams gelijktijdig</span>
+          </div>
+        </div>
+
+        <!-- Row: Training per sprint (1 per sprint, elke maand) -->
+        <div class="tl-v2-row">
+          <div class="tl-v2-pill client" style="grid-column:2/3"
+            onclick="showDetail(this)"
+            data-title="Training sprint 1 &amp; 2"
+            data-type="client"
+            data-desc="Eén training per sprint, ~2 uur. Inhoud op basis van de intake: clusters Governance, Werkwijze en Procesflow. Sprint 1 en sprint 2 elk één sessie.">
+            <span class="tl-v2-pill-name">Training &middot; sprint 1 &amp; 2</span>
+            <span class="tl-v2-pill-meta">oktober &middot; 1 per sprint</span>
+          </div>
+          <div class="tl-v2-pill client" style="grid-column:3/4"
+            onclick="showDetail(this)"
+            data-title="Training sprint 3 &amp; 4"
+            data-type="client"
+            data-desc="Vervolg op de vorige trainingen. Inhoud afgestemd op wat er in de sprints leeft. Sprint 3 en sprint 4 elk één sessie.">
+            <span class="tl-v2-pill-name">Training &middot; sprint 3 &amp; 4</span>
+            <span class="tl-v2-pill-meta">november &middot; 1 per sprint</span>
+          </div>
+          <div class="tl-v2-pill client" style="grid-column:4/5"
+            onclick="showDetail(this)"
+            data-title="Training sprint 5 &amp; 6"
+            data-type="client"
+            data-desc="Afsluitende trainingen gericht op verankering en zelfstandig werken. Sprint 5 en sprint 6 elk één sessie.">
+            <span class="tl-v2-pill-name">Training &middot; sprint 5 &amp; 6</span>
+            <span class="tl-v2-pill-meta">december &middot; 1 per sprint</span>
+          </div>
+        </div>
+
+        <!-- DIVIDER -->
+        <div class="tl-v2-divider"></div>
+
+        <!-- MORGEN SWIM LANE -->
+        <div class="tl-v2-swim-label morgen">&#8595; Wat wij toevoegen</div>
+
+        <!-- Row: Kickoff (sept) + CoP (okt-dec) -->
+        <div class="tl-v2-row">
+          <div class="tl-v2-pill morgen" style="grid-column:1/2"
+            onclick="showDetail(this)"
+            data-title="Kickoff lunchsessie"
+            data-type="morgen"
+            data-desc="11:00–13:00 · week 1 september. De 2 koplopers laten zien hoe zij werken — geen glossy presentatie, gewoon echt werk. Broodjes, open vragen, live demo. Eenmalig, eyeopener voor alle 6 nieuwe teams.">
+            <span class="tl-v2-pill-name">Kickoff lunchsessie</span>
+            <span class="tl-v2-pill-meta">sept wk1 &middot; eenmalig</span>
+          </div>
+          <div class="tl-v2-pill morgen" style="grid-column:2/5"
+            onclick="showDetail(this)"
+            data-title="Community of Practice (maandelijks)"
+            data-type="morgen"
+            data-desc="Maandelijks komen developers samen — de koplopers én de 6 nieuwe teams. De CoP is een maandelijkse bijeenkomst waar teams ervaringen delen, vragen stellen en van elkaar leren. Facilitation + verslaglegging. 3 sessies: okt, nov, dec.">
+            <span class="tl-v2-pill-name">Community of Practice (CoP)</span>
+            <span class="tl-v2-pill-meta">maandelijks &middot; okt &rarr; dec</span>
+          </div>
+        </div>
+
+        <!-- Row: Intake (sept) + Teamgesprekken/nulmeting (okt-nov) -->
+        <div class="tl-v2-row">
+          <div class="tl-v2-pill morgen" style="grid-column:1/2"
+            onclick="showDetail(this)"
+            data-title="Intake &amp; nulmeting"
+            data-type="morgen"
+            data-desc="Vastleggen hoe de koplopers werken, teamkeuze onderbouwen, trainingsagenda opstellen. Eenmalig — week 1 september.">
+            <span class="tl-v2-pill-name">Intake &amp; nulmeting</span>
+            <span class="tl-v2-pill-meta">sept wk1 &middot; eenmalig</span>
+          </div>
+          <div class="tl-v2-pill morgen" style="grid-column:2/4"
+            onclick="showDetail(this)"
+            data-title="Teamgesprekken (onderdeel intake)"
+            data-type="morgen"
+            data-desc="Per team een kort gesprek als onderdeel van de nulmeting: wat verandert er voor jullie? Wat zijn jullie zorgen? Zo starten we met een echt beeld van wat er leeft. 6 sessies, okt – nov.">
+            <span class="tl-v2-pill-name">Teamgesprekken</span>
+            <span class="tl-v2-pill-meta">6 teams &middot; okt &ndash; nov &middot; onderdeel intake</span>
+          </div>
+        </div>
+
+        <!-- Row: Mgmt alignment (sept) + Gilde sessies (okt-nov) + Eindmeting (dec) -->
+        <div class="tl-v2-row">
+          <div class="tl-v2-pill morgen" style="grid-column:1/2"
+            onclick="showDetail(this)"
+            data-title="Management alignment ochtend"
+            data-type="morgen"
+            data-desc="Halve dag met het management: richting publiek uitspreken, teamkeuze bespreken, psychologische veiligheid inrichten. Voorbereiding en verslaglegging inbegrepen. Week 1 september.">
+            <span class="tl-v2-pill-name">Mgmt alignment sessie</span>
+            <span class="tl-v2-pill-meta">sept wk1 &middot; eenmalig</span>
+          </div>
+          <div class="tl-v2-pill morgen" style="grid-column:2/3"
+            onclick="showDetail(this)"
+            data-title="Gilde sessies &middot; oktober"
+            data-type="morgen"
+            data-desc="Twee bijeenkomsten in oktober (sprint 1 & 2): koplopers delen hun werkwijze met de champions uit de nieuwe teams. Peer-to-peer, €150 per sessie.">
+            <span class="tl-v2-pill-name">Gilde &middot; sprint 1 &amp; 2</span>
+            <span class="tl-v2-pill-meta">oktober &middot; 2&times;</span>
+          </div>
+          <div class="tl-v2-pill morgen" style="grid-column:3/4"
+            onclick="showDetail(this)"
+            data-title="Gilde sessies &middot; november"
+            data-type="morgen"
+            data-desc="Twee bijeenkomsten in november (sprint 3 & 4): koplopers delen hun werkwijze met de champions uit de nieuwe teams. €150 per sessie.">
+            <span class="tl-v2-pill-name">Gilde &middot; sprint 3 &amp; 4</span>
+            <span class="tl-v2-pill-meta">november &middot; 2&times;</span>
+          </div>
+          <div class="tl-v2-pill morgen" style="grid-column:4/5"
+            onclick="showDetail(this)"
+            data-title="Gilde sessies &middot; december"
+            data-type="morgen"
+            data-desc="Twee bijeenkomsten in december (sprint 5 & 6): koplopers delen hun werkwijze met de champions. Laatste sessie heeft focus op borging en overdracht. €150 per sessie.">
+            <span class="tl-v2-pill-name">Gilde &middot; sprint 5 &amp; 6</span>
+            <span class="tl-v2-pill-meta">december &middot; 2&times;</span>
+          </div>
+          <div class="tl-v2-pill morgen" style="grid-column:4/5"
+            onclick="showDetail(this)"
+            data-title="Eindmeting &amp; doorgroeiplan"
+            data-type="morgen"
+            data-desc="Aan het einde van Q3 meten we waar elk team staat en welke teams klaar zijn voor de volgende fase. Analyse + advies voor wave 2.">
+            <span class="tl-v2-pill-name">Eindmeting &amp; wave 2 plan</span>
+            <span class="tl-v2-pill-meta">december &middot; eenmalig</span>
+          </div>
+        </div>
+
+        <!-- Row: Champions kickoff (okt) -->
+        <div class="tl-v2-row">
+          <div class="tl-v2-pill morgen" style="grid-column:2/3"
+            onclick="showDetail(this)"
+            data-title="Champions kickoff"
+            data-type="morgen"
+            data-desc="Per team is er één persoon die intern voorop loopt — de champion. In deze kickoff activeren we de 6 champions: expliciete rol als brug tussen de koplopers, ons en hun team. Eenmalig — sprint 1 oktober.">
+            <span class="tl-v2-pill-name">Champions kickoff</span>
+            <span class="tl-v2-pill-meta">sprint 1 &middot; eenmalig</span>
+          </div>
+        </div>
+
+      </div><!-- /tl-v2-wrap -->
+    </div><!-- /tl-v2-outer -->
+
+    <!-- DETAIL PANEL -->
+    <div class="tl-detail-panel" id="tl-detail">
+      <button class="tl-detail-close" onclick="closeDetail()">sluit &times;</button>
+      <div class="tl-detail-title" id="tl-detail-title"></div>
+      <div class="tl-detail-type" id="tl-detail-type"></div>
+      <div class="tl-detail-desc" id="tl-detail-desc"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 06 INVESTERING / BEGROTING -->
+<section id="begroting">
+  <div class="container">
+    <span class="eyebrow">06 &mdash; Investering</span>
+    <h2>Wat kost het?</h2>
+    <p style="margin-bottom:24px; font-size:0.88rem; color:var(--text-sec);">Links: de basis die blijkt uit gesprekken. Rechts: het volledige programma inclusief wat wij toevoegen. Alle bedragen zijn exclusief btw en indicatief.</p>
+
+    <div class="beg-compare">
+
+      <!-- KOLOM 1: WAT DE KLANT VRAAGT -->
+      <div class="beg-col col-client">
+        <div class="beg-col-title">Lijn 1 &mdash; De basis</div>
+        <div class="beg-col-sub">Alleen de begeleiding die PharmaPartners heeft gevraagd: sprint coaching, spreekuur en trainingen op maat.</div>
+
+        <div class="beg-line">
+          <span class="beg-line-name">Sprint begeleiding<br><small style="opacity:0.65">6 teams &times; 6 sprints &times; 5u &times; &euro;150/uur &middot; Karin / Harmen / Simon</small></span>
+          <span class="beg-line-price">&euro;27.000</span>
+        </div>
+        <div class="beg-line">
+          <span class="beg-line-name">Wekelijks spreekuur <span style="font-size:0.75em;opacity:0.7">(online &middot; Harmen)</span><br><small style="opacity:0.65">~12 sessies &times; &euro;150</small></span>
+          <span class="beg-line-price">&euro;1.800</span>
+        </div>
+        <div class="beg-line">
+          <span class="beg-line-name">Trainingen (3 tot 5)<br><small style="opacity:0.65">&euro;900 per training &middot; Karin &amp; Harmen</small></span>
+          <span class="beg-line-price">&euro;2.700&ndash;&euro;4.500</span>
+        </div>
+
+        <div class="beg-col-total" style="margin-top:16px;">
+          <span class="beg-col-total-label">Totaal indicatief</span>
+          <span class="beg-col-total-amount">&euro;31.500&ndash;&euro;33.300</span>
+        </div>
+      </div>
+
+      <!-- KOLOM 2: VOLLEDIG PROGRAMMA -->
+      <div class="beg-col col-full">
+        <div class="beg-col-title">Lijn 1 + 2 &mdash; Volledig programma</div>
+        <div class="beg-col-sub">Alles van lijn 1, plus de veranderkundige aanpak die borgt dat het ook beklijft.</div>
+
+        <div class="beg-line">
+          <span class="beg-line-name" style="color:var(--text-muted)">Sprint begeleiding, spreekuur, trainingen</span>
+          <span class="beg-line-price" style="color:var(--text-muted)">&euro;31.500&ndash;&euro;33.300</span>
+        </div>
+
+        <div class="beg-sep">+ Wat wij toevoegen</div>
+
+        <div class="beg-line highlight">
+          <span class="beg-line-name">Kickoff lunchsessie<br><small style="opacity:0.7">Karin &amp; Harmen</small></span>
+          <span class="beg-line-price">&euro;900</span>
+        </div>
+        <div class="beg-line highlight">
+          <span class="beg-line-name">Intake &amp; nulmeting (incl. teamgesprekken)<br><small style="opacity:0.7">10u &times; &euro;150/uur &middot; Karin &amp; Harmen</small></span>
+          <span class="beg-line-price">&euro;1.500</span>
+        </div>
+        <div class="beg-line highlight">
+          <span class="beg-line-name">Management alignment ochtend<br><small style="opacity:0.7">Karin &amp; Harmen</small></span>
+          <span class="beg-line-price">&euro;1.800</span>
+        </div>
+        <div class="beg-line highlight">
+          <span class="beg-line-name">Champions kickoff<br><small style="opacity:0.7">Karin &amp; Harmen</small></span>
+          <span class="beg-line-price">&euro;900</span>
+        </div>
+        <div class="beg-line highlight">
+          <span class="beg-line-name">Gilde / koploper sessies<br><small style="opacity:0.7">6 sprints &times; &euro;150/sessie</small></span>
+          <span class="beg-line-price">&euro;900</span>
+        </div>
+        <div class="beg-line highlight">
+          <span class="beg-line-name">Community of Practice (CoP)<br><small style="opacity:0.7">3 sessies &times; 2u &times; &euro;150/uur</small></span>
+          <span class="beg-line-price">&euro;900</span>
+        </div>
+        <div class="beg-line highlight">
+          <span class="beg-line-name">Eindmeting &amp; doorgroeiplan<br><small style="opacity:0.7">10u &times; &euro;150/uur &middot; Karin &amp; Harmen</small></span>
+          <span class="beg-line-price">&euro;1.500</span>
+        </div>
+        <div class="beg-line highlight">
+          <span class="beg-line-name">Projectmanagement<br><small style="opacity:0.7">10u &times; &euro;150/uur &middot; Karin</small></span>
+          <span class="beg-line-price">&euro;1.500</span>
+        </div>
+
+        <div class="beg-col-total">
+          <span class="beg-col-total-label">Totaal indicatief</span>
+          <span class="beg-col-total-amount">&euro;42.000&ndash;&euro;44.000</span>
+          <span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:4px;">excl. btw &middot; indicatief</span>
+        </div>
+      </div>
+
+    </div><!-- /beg-compare -->
+
+    <p style="margin-top:16px; font-size:0.8rem; color:var(--text-muted); font-style:italic;">Alle onderdelen zijn modulair afneembaar. Exacte tarieven worden in overleg vastgesteld. Bij fysieke aanwezigheid op locatie wordt reistijd vergoed &agrave; &euro;75/uur en reiskosten &agrave; &euro;0,23/km of werkelijke OV-kosten.</p>
+
+    <!-- IMPACT TABEL -->
+    <h2 style="margin-top:56px;">Wat vraagt dit van je mensen?</h2>
+    <p style="font-size:0.88rem;color:var(--text-sec);margin-bottom:24px;">Verandering kost tijd &mdash; maar hoeveel tijd hangt af van hoe je het inricht. Als je de begeleiding verweven in bestaande rituelen, is de extra belasting beperkt. Onderstaand een eerlijk beeld per rol.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:8px;">
+
+      <!-- Management -->
+      <div style="background:rgba(91,45,142,0.12);border:1px solid rgba(155,111,207,0.3);border-radius:14px;padding:24px;">
+        <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple-light);margin-bottom:10px;">Management</div>
+        <div style="font-size:1.5rem;font-weight:800;color:var(--text-main);margin-bottom:4px;">~2 dagen</div>
+        <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:16px;">over het hele traject, incl. voorbereiding</div>
+        <ul style="list-style:none;padding:0;margin:0;font-size:0.83rem;color:var(--text-sec);line-height:1.8;">
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;">&#8250;</span> Kickoff lunchsessie &mdash; richting uitspreken (+ voorbereiding)</li>
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;">&#8250;</span> Mgmt alignment sessie &mdash; halve dag (+ voorbereiding)</li>
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;">&#8250;</span> Eindmeting &amp; doorgroeiplan (+ bespreking intern)</li>
+        </ul>
+        <div style="margin-top:16px;padding:10px 12px;background:rgba(216,254,86,0.06);border:1px solid rgba(216,254,86,0.2);border-radius:8px;font-size:0.78rem;color:var(--text-muted);">Zichtbare steun van management is de belangrijkste succesfactor. Twee dagen investering over een heel kwartaal.</div>
+      </div>
+
+      <!-- Nieuwe teams + Champions -->
+      <div style="background:rgba(91,45,142,0.12);border:1px solid rgba(155,111,207,0.3);border-radius:14px;padding:24px;">
+        <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple-light);margin-bottom:10px;">Nieuwe teams (6) + Champions</div>
+        <div style="font-size:1.5rem;font-weight:800;color:var(--text-main);margin-bottom:4px;">~2&ndash;4 uur extra/sprint</div>
+        <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:16px;">per developer; champions +1&ndash;2 uur extra</div>
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">In spritrituelen (geen extra tijd)</div>
+        <ul style="list-style:none;padding:0;margin:0 0 12px;font-size:0.83rem;color:var(--text-sec);line-height:1.8;">
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--purple-light);font-weight:700;">&#8250;</span> Sprint coaching <span style="font-size:0.75rem;color:var(--text-muted)">(stand-up &amp; retro)</span></li>
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--purple-light);font-weight:700;">&#8250;</span> Spreekuur <span style="font-size:0.75rem;color:var(--text-muted)">(ingebed in sprintritme)</span></li>
+        </ul>
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Extra per sprint</div>
+        <ul style="list-style:none;padding:0;margin:0 0 12px;font-size:0.83rem;color:var(--text-sec);line-height:1.8;">
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--purple-light);font-weight:700;">&#8250;</span> 1x training &mdash; ~2 uur</li>
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;">&#8250;</span> Coaching uur <span style="font-size:0.75rem;color:var(--text-muted)">(optioneel)</span></li>
+        </ul>
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Eenmalig &amp; maandelijks</div>
+        <ul style="list-style:none;padding:0;margin:0;font-size:0.83rem;color:var(--text-sec);line-height:1.8;">
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;">&#8250;</span> Impact gesprek &mdash; 2 uur <span style="font-size:0.75rem;color:var(--text-muted)">(eenmalig, v&oacute;&oacute;r start)</span></li>
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;">&#8250;</span> CoP &mdash; 1,5 uur <span style="font-size:0.75rem;color:var(--text-muted)">(maandelijks)</span></li>
+        </ul>
+        <div style="margin-top:16px;padding:10px 12px;background:rgba(216,254,86,0.06);border:1px solid rgba(216,254,86,0.2);border-radius:8px;font-size:0.78rem;color:var(--text-muted);">Sprint coaching en spreekuur zitten al in het sprintritme. De training is de enige echte extra investering per sprint.</div>
+      </div>
+
+      <!-- Koplopers -->
+      <div style="background:rgba(91,45,142,0.12);border:1px solid rgba(155,111,207,0.3);border-radius:14px;padding:24px;">
+        <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple-light);margin-bottom:10px;">Koplopers (2 teams)</div>
+        <div style="font-size:1.5rem;font-weight:800;color:var(--text-main);margin-bottom:4px;">minimale extra druk</div>
+        <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:16px;">zij werken gewoon door in hun eigen sprint</div>
+        <ul style="list-style:none;padding:0;margin:0;font-size:0.83rem;color:var(--text-sec);line-height:1.8;">
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;">&#8250;</span> Kickoff lunchsessie &mdash; werkwijze demonstreren (eenmalig)</li>
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;">&#8250;</span> Gilde sessies &mdash; periodiek aansluiten bij nieuwe teams</li>
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;">&#8250;</span> CoP &mdash; maandelijks bijdragen aan groepsleren</li>
+        </ul>
+        <div style="margin-top:16px;padding:10px 12px;background:rgba(216,254,86,0.06);border:1px solid rgba(216,254,86,0.2);border-radius:8px;font-size:0.78rem;color:var(--text-muted);">Koplopers hoeven niets nieuws te leren of extra te organiseren. Ze worden soms gevraagd hun werkwijze te laten zien &mdash; iets wat ze toch al doen. De meerwaarde voor henzelf: erkenning en een groter podium.</div>
+      </div>
+
+    </div>
+    <p style="font-size:0.78rem;color:var(--text-muted);margin-top:8px;"><span style="color:var(--purple-light);font-weight:700;">Paars</span> = de basis die blijkt uit gesprekken &nbsp;&middot;&nbsp; <span style="color:var(--accent);font-weight:700;">Geel-groen</span> = wat wij toevoegen. Items met paars of geel-groen zijn al ingebed in bestaande rituelen waar mogelijk.</p>
+
+  </div>
+</section>
+
+<!-- 07 OVERDENKINGEN -->
+<section id="overdenkingen">
+  <div class="container">
+    <span class="eyebrow">07 &mdash; Overdenkingen</span>
+    <h2>Open vragen</h2>
+    <p style="margin-bottom:24px;">Voordat we van start gaan, willen we graag samen met PharmaPartners over de volgende punten nadenken. Niet als blokkades &mdash; als startpunten voor een goed gesprek.</p>
+    <div class="questions-list">
+      <div class="question-item">
+        <div class="question-num">1</div>
+        <div class="question-text">Welke rollen worden precies geraakt &mdash; en hoe gaan we hen begeleiden?</div>
+      </div>
+      <div class="question-item">
+        <div class="question-num">2</div>
+        <div class="question-text">Op welke criteria worden de 6 teams geselecteerd?</div>
+      </div>
+      <div class="question-item">
+        <div class="question-num">3</div>
+        <div class="question-text">Hoe lang zijn de sprints &mdash; en hoe is het sprintritme ingericht?</div>
+      </div>
+      <div class="question-item">
+        <div class="question-num">4</div>
+        <div class="question-text">Is het management echt gecommitteerd &mdash; en wie is de interne sponsor?</div>
+      </div>
+      <div class="question-item">
+        <div class="question-num">5</div>
+        <div class="question-text">Zijn de 2 koplopers bereid een actieve rol te spelen?</div>
+      </div>
+      <div class="question-item">
+        <div class="question-num">6</div>
+        <div class="question-text">Hoe kijkt PharmaPartners naar de lange termijn &mdash; is dit een programma of een pilot?</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERN: VERDELING WERKZAAMHEDEN -->
+<section id="intern-verdeling" style="background:rgba(255,255,255,0.02);border-top:1px solid rgba(255,255,255,0.06);">
+  <div class="container">
+    <span class="eyebrow">Intern &mdash; Morgen</span>
+    <h2>Verdeling werkzaamheden</h2>
+    <p style="font-size:0.88rem;color:var(--text-sec);margin-bottom:28px;">Intern overzicht van wie wat doet. Niet bedoeld voor de klant.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+
+      <div style="background:rgba(91,45,142,0.12);border:1px solid rgba(155,111,207,0.3);border-radius:14px;padding:22px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <div class="team-avatar" style="width:36px;height:36px;font-size:1rem;">K</div>
+          <div>
+            <div style="font-weight:700;font-size:0.95rem;color:var(--text-main);">Karin</div>
+            <div style="font-size:0.72rem;color:var(--text-muted);">~1 dag/week</div>
+          </div>
+        </div>
+        <ul style="list-style:none;padding:0;margin:0;font-size:0.82rem;color:var(--text-sec);line-height:1.9;">
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;">&#8250;</span> Projectmanagement &amp; klantcontact (10u)</li>
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;">&#8250;</span> Sprint coaching 2 teams &mdash; 1 dag/week op locatie</li>
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;">&#8250;</span> Intake &amp; nulmeting (incl. teamgesprekken)</li>
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;">&#8250;</span> Kickoff lunchsessie</li>
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;">&#8250;</span> Champions kickoff</li>
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;">&#8250;</span> Eindmeting &amp; doorgroeiplan (10u)</li>
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--purple-light);font-weight:700;">&#8250;</span> Mgmt alignment ochtend (samen met Harmen)</li>
+        </ul>
+      </div>
+
+      <div style="background:rgba(91,45,142,0.12);border:1px solid rgba(155,111,207,0.3);border-radius:14px;padding:22px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <div class="team-avatar" style="width:36px;height:36px;font-size:1rem;">H</div>
+          <div>
+            <div style="font-weight:700;font-size:0.95rem;color:var(--text-main);">Harmen</div>
+            <div style="font-size:0.72rem;color:var(--text-muted);">~1 dag/week</div>
+          </div>
+        </div>
+        <ul style="list-style:none;padding:0;margin:0;font-size:0.82rem;color:var(--text-sec);line-height:1.9;">
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;">&#8250;</span> Sprint coaching 2 teams</li>
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;">&#8250;</span> Trainingen (1 per sprint, €900)</li>
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;">&#8250;</span> Wekelijks spreekuur (online, €150)</li>
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;">&#8250;</span> Intake &amp; nulmeting (samen met Karin)</li>
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--purple-light);font-weight:700;">&#8250;</span> Mgmt alignment ochtend (samen met Karin)</li>
+        </ul>
+      </div>
+
+      <div style="background:rgba(91,45,142,0.12);border:1px solid rgba(155,111,207,0.3);border-radius:14px;padding:22px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <div class="team-avatar" style="width:36px;height:36px;font-size:1rem;">M</div>
+          <div>
+            <div style="font-weight:700;font-size:0.95rem;color:var(--text-main);">Michiel</div>
+            <div style="font-size:0.72rem;color:var(--text-muted);">accountmanagement</div>
+          </div>
+        </div>
+        <ul style="list-style:none;padding:0;margin:0;font-size:0.82rem;color:var(--text-sec);line-height:1.9;">
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;">&#8250;</span> Klantrelatie &amp; verwachtingen</li>
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;">&#8250;</span> Commerciële opvolging</li>
+        </ul>
+      </div>
+
+      <div style="background:rgba(91,45,142,0.12);border:1px solid rgba(155,111,207,0.3);border-radius:14px;padding:22px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <div class="team-avatar" style="width:36px;height:36px;font-size:1rem;">S</div>
+          <div>
+            <div style="font-weight:700;font-size:0.95rem;color:var(--text-main);">Simon</div>
+            <div style="font-size:0.72rem;color:var(--text-muted);">~4 uur/week</div>
+          </div>
+        </div>
+        <ul style="list-style:none;padding:0;margin:0;font-size:0.82rem;color:var(--text-sec);line-height:1.9;">
+          <li style="display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;">&#8250;</span> Sprint coaching 2 teams</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-logo">MORGEN<span>.</span></div>
+    <div class="footer-url">morgencompany.com</div>
+  </div>
+</footer>
+
+<script>
+  let currentPill = null;
+
+  function showDetail(pill) {
+    const panel = document.getElementById('tl-detail');
+    const title = document.getElementById('tl-detail-title');
+    const type = document.getElementById('tl-detail-type');
+    const desc = document.getElementById('tl-detail-desc');
+
+    // If same pill clicked, close
+    if (currentPill === pill) {
+      closeDetail();
+      return;
+    }
+
+    // Remove active from previous
+    if (currentPill) currentPill.classList.remove('active');
+
+    // Set new active
+    currentPill = pill;
+    pill.classList.add('active');
+
+    title.innerHTML = pill.dataset.title;
+    desc.innerHTML = pill.dataset.desc;
+
+    if (pill.dataset.type === 'client') {
+      type.textContent = 'De basis die blijkt uit gesprekken';
+      type.className = 'tl-detail-type client';
+    } else {
+      type.textContent = 'Wat Morgen toevoegt';
+      type.className = 'tl-detail-type morgen';
+    }
+
+    panel.classList.add('visible');
+    setTimeout(function() {
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 50);
+  }
+
+  function closeDetail() {
+    const panel = document.getElementById('tl-detail');
+    panel.classList.remove('visible');
+    if (currentPill) {
+      currentPill.classList.remove('active');
+      currentPill = null;
+    }
+  }
+</script>
+</body>
+</html>
